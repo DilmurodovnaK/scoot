@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scoot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="secondary-container">
+                <div class="navbar">
+                    <div class="navbarmenu">
+                        <a href="./index.html"><img src="./image/icon/logo.svg" alt="icon"></a>
+
+                        <ul class="navbar__menu">
+                            <li class="navbar__menu__item"> <a class="navbar__menu__link" href="#">About</a></li>
+                            <li class="navbar__menu__item"> <a class="navbar__menu__link" href="#">Location</a></li>
+                            <li class="navbar__menu__item"> <a class="navbar__menu__link" href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="navbar__button">
+                        <button class="navbar__button--btn">Get Scootin</button>
+                    </div>
+                    <div class="navbar__add">
+                        <button class="navbar__add__btn">
+                        <img src="./image/icon/add.svg" alt="icon">
+                        </button>
+                        <button class="navbar__remove__btn">
+                        <img src="./image/icon/remove.svg" alt="icon">
+                    </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </nav>
+        <div class="heroo">
+            <div class="container">
+                <div class="hero">
+                    <div class="hero__box">
+                        <h1 class="hero__box--title">Scooter sharing made simple</h1>
+                        <p class="hero__box--text"> Scoot takes the hassle out of urban mobility. Our bikes are placed in convenient locations in each of our cities. Use our app to locate the nearest bike, unlock it with a tap, and you’re away!</p>
+                        <button class="hero__box--btn">Get Scootin</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script>
+        const btn = document.querySelector('.navbar__add__btn');
+        const menu = document.querySelector('.navbar__menu');
+
+
+        const remove__btn = document.querySelector('.navbar__remove__btn');
+        btn.addEventListener('click', () => {
+            menu.classList.add('show')
+            remove__btn.style.display = 'block'
+            btn.style.display = 'none';
+        });
+        remove__btn.addEventListener('click', () => {
+            menu.classList.remove('show')
+            remove__btn.style.display = 'none'
+
+            btn.style.display = 'block';
+
+        })
+    </script>
+</body>
+
+</html>

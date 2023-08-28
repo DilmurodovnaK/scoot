@@ -1,0 +1,331 @@
+        @import '../variables';
+        @import '../mixin';
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 0 21px 0;
+            z-index: 3;
+            &__menu {
+                display: flex;
+                gap: 32px;
+                align-items: center;
+                &__link {
+                    text-decoration: none;
+                    font-family: 'Space Mono', sans-serif;
+                    font-size: 15px;
+                    font-weight: 700;
+                    line-height: 25px;
+                    letter-spacing: 0px;
+                    text-align: left;
+                    color: $text_color;
+                    cursor: pointer;
+                    @include for-phone {
+                        display: none;
+                    }
+                }
+                &__link:hover {
+                    color: $primary_color;
+                }
+            }
+            &__add {
+                display: none;
+                @include for-phone {
+                    display: block;
+                }
+                &__btn {
+                    background: none;
+                    border: none;
+                    display: none;
+                    @include for-phone {
+                        display: block;
+                        margin-right: 24px;
+                    }
+                }
+            }
+            &__remove__btn {
+                display: none;
+                border: none;
+                background: none;
+                margin-right: 24px;
+            }
+            &__add__btn:focus .navbar__menu {
+                transform: translateX(0);
+            }
+            &__button--btn {
+                width: 180px;
+                height: 53px;
+                flex-shrink: 0;
+                color: $white_color;
+                text-align: center;
+                font-family: 'Space Mono', sans-serif;
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 25px;
+                background-color: $primary_color;
+                border: 1px solid $primary_color;
+                cursor: pointer;
+                @include for-phone {
+                    display: none;
+                }
+            }
+            &__button--btn:hover {
+                color: $primary_color;
+                background-color: $white_color;
+                border: 1px solid $primary_color;
+            }
+        }
+        
+        .navbarmenu {
+            display: flex;
+            gap: 58px;
+        }
+        
+        .show {
+            transform: translateX(100);
+            width: 256px;
+        }
+        
+        @media (max-width:523px) {
+            .navbar {
+                &__menu {
+                    max-width: 256px;
+                    height: 603px;
+                    flex-shrink: 0;
+                    position: fixed;
+                    top: 77px;
+                    left: 0;
+                    background-color: $third_color;
+                    padding-top: 64px;
+                    padding-left: 3px;
+                    row-gap: 24px;
+                    transform: translateX(0%);
+                    transition: 0.2s ease;
+                    flex-direction: column;
+                    z-index: 3;
+                    &__link {
+                        display: block;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 24px;
+                        font-size: 18px;
+                        font-weight: 700;
+                        line-height: 32px;
+                        letter-spacing: 0px;
+                        line-height: 25px;
+                        text-align: center;
+                        align-items: center;
+                        text-align: center;
+                        color: $span_color;
+                        font-family: 'Space Mono', sans-serif;
+                        text-align: left;
+                    }
+                }
+                &__button--btn {
+                    display: block;
+                    display: none;
+                }
+            }
+        }
+        
+        .heroo {
+            background-image: url(/image/backgroundd.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 650px;
+            @include for-tablet {
+                background-image: url(/image/bacgroundtablet.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 650px;
+            }
+        }
+        
+        .hero {
+            position: relative;
+            max-width: 840px;
+            padding-top: 153px;
+            @include for-tablet {
+                padding-top: 137px;
+            }
+            &__box {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+                @include for-tablet {
+                    gap: 20px;
+                }
+                &--title {
+                    max-width: 500px;
+                    height: 112px;
+                    font-family: 'Space Mono', sans-serif;
+                    font-size: 56px;
+                    font-weight: 700;
+                    line-height: 56px;
+                    letter-spacing: -2.5px;
+                    text-align: left;
+                    color: $white_color;
+                    @include for-tablet {
+                        text-align: center;
+                    }
+                }
+                &--text {
+                    max-width: 405px;
+                    height: 100px;
+                    font-family: 'Lexend Deca', sans-serif;
+                    font-size: 15px;
+                    font-weight: 400;
+                    line-height: 25px;
+                    letter-spacing: 0px;
+                    text-align: left;
+                    color: $white_color;
+                    padding-left: 41px;
+                    @include for-tablet {
+                        text-align: center;
+                        max-width: 573px
+                    }
+                }
+                &--btn {
+                    width: 180px;
+                    height: 53px;
+                    flex-shrink: 0;
+                    color: $white_color;
+                    text-align: center;
+                    font-family: 'Space Mono', sans-serif;
+                    font-size: 15px;
+                    font-style: normal;
+                    margin-left: -150px;
+                    font-weight: 700;
+                    line-height: 25px;
+                    background-color: $primary_color;
+                    border: 1px solid $primary_color;
+                    cursor: pointer;
+                }
+                &--btn:hover {
+                    color: $primary_color;
+                    background-color: $white_color;
+                    border: 1px solid $primary_color;
+                }
+            }
+        }
+        
+        .hero__box--text::before {
+            content: url(/image/span1.png);
+            position: absolute;
+            bottom: 124px;
+            left: 0;
+        }
+        
+        .hero__box--text::after {
+            content: url(/image/span2.png);
+            position: absolute;
+            right: -270px;
+            bottom: -11px;
+        }
+        
+        @media (max-width:1133px) {
+            .hero__box--text::before {
+                bottom: 14px;
+            }
+            .hero__box--text::after {
+                right: 0;
+                bottom: -123px;
+                @include for-tablet {
+                    display: none;
+                }
+            }
+            .hero__box--text {
+                padding: 0;
+            }
+            .hero__box--btn {
+                width: 140px;
+                font-size: 13px;
+                margin-left: -260px;
+            }
+        }
+        
+        @media (max-width:768px) {
+            .hero__box--text::before {
+                content: url(/image/span3.png);
+                top: 470px;
+                @include for-phone {
+                    content: url(/image/span4.png);
+                }
+            }
+            .hero__box--btn {
+                width: 180px;
+                font-size: 15px;
+                margin-left: 0px;
+            }
+        }
+        
+        @media (max-width:683px) {
+            .navbarmenu {
+                gap: 28px;
+            }
+            .navbar__menu {
+                gap: 22px;
+                &__link {
+                    font-size: 12px;
+                }
+            }
+            .navbar__button--btn {
+                width: 100px;
+                height: 43px;
+                font-size: 11px;
+            }
+            .hero__box {
+                gap: 0px;
+                &--title {
+                    font-size: 46px;
+                    line-height: 46px;
+                }
+                &--text {
+                    max-width: 383px;
+                    font-size: 12px;
+                }
+            }
+        }
+        
+        @media (max-width:390px) {
+            .hero {
+                padding-top: 115px;
+                background-image: url(/image/backgroundphone.jpg);
+                background-repeat: no-repeat;
+                &__box {
+                    gap: 56px;
+                }
+                &__box--title {
+                    max-width: 311px;
+                    color: $white_color;
+                    text-align: center;
+                    font-family: 'Space Mono', sans-serif;
+                    font-size: 40px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 40px;
+                    /* 100% */
+                    letter-spacing: -1.786px;
+                }
+                &__box--text {
+                    max-width: 311px;
+                    color: $white_color;
+                    text-align: center;
+                    font-family: 'Lexend Deca', sans-serif;
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 25px;
+                    /* 166.667% */
+                }
+            }
+        }
